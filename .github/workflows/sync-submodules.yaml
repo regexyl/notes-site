@@ -1,5 +1,5 @@
 name: sync-submodules
-on: [repository_dispatch]
+on: workflow_dispatch
 
 jobs:
   sync-submodule-notes:
