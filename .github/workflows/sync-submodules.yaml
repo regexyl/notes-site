@@ -1,5 +1,7 @@
 name: sync-submodules
-on: workflow_dispatch
+on:
+  repository_dispatch:
+    types: [sync-submodules]
 
 jobs:
   sync-submodule-notes:
@@ -7,5 +9,5 @@ jobs:
     steps:
       - run: echo "Starting to sync submodules..."
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - run: git submodule update --init --recursive
