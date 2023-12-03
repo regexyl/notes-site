@@ -12,13 +12,14 @@ jobs:
       - run: echo "Starting to sync submodules..."
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: true
       - name: Pull latest notes changes
         run: |
           cd notes
           pwd
-          git remote add notes https:///${{ secrets.PAT }}@github.com/regexyl/notes.git
           git remote -v
-          git pull notes main
+          git pull
       - run: pwd
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
