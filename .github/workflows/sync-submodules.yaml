@@ -11,6 +11,8 @@ jobs:
       - run: echo "Starting to sync submodules..."
       - name: Checkout
         uses: actions/checkout@v3
+      - run: pwd
+      - run: ls
       - run: cd ./notes
       - run: pwd
       - run: git checkout main
