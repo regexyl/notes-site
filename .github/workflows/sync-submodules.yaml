@@ -20,7 +20,7 @@ jobs:
           cd notes
           pwd
           git remote -v
-          git pull
+          git reset --hard main
       - run: pwd
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
