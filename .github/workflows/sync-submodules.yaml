@@ -16,8 +16,9 @@ jobs:
         run: |
           cd notes
           pwd
+          git remote add notes https:///${{ secrets.PAT }}@github.com/regexyl/notes.git
           git remote -v
-          git pull https://${{ secrets.PAT }}@github.com/regexyl/notes.git main
+          git pull notes main
       - run: pwd
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
