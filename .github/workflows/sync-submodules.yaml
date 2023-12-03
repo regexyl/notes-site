@@ -17,8 +17,7 @@ jobs:
           cd notes
           pwd
           git remote -v
-          git checkout main
-          git pull
+          git pull https://github.com/regexyl/notes.git main
       - run: pwd
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
