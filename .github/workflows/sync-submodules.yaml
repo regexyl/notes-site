@@ -2,7 +2,7 @@ name: sync-submodules
 on:
   repository_dispatch:
     types: [sync-submodules]
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   sync-submodule-notes:
