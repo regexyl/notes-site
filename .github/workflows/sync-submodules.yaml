@@ -12,13 +12,13 @@ jobs:
       - run: echo "Starting to sync submodules..."
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Pull latest notes changes
+        run: |
+          cd notes
+          pwd
+          git checkout main
+          git pull
       - run: pwd
-      - run: ls
-      - run: cd notes
-      - run: pwd
-      - run: git checkout main
-      - run: git pull
-      - run: cd ..
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update latest notes contents
