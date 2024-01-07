@@ -30,6 +30,7 @@ export default (() => {
         <meta name="generator" content="Quartz" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <meta name="twitter:card" content="summary_large_image" />
         {css.map((href) => (
           <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
         ))}
