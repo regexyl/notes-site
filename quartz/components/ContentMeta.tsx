@@ -2,8 +2,16 @@ import { formatDate, getDate } from "./Date"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import readingTime from "reading-time"
 
-export default (() => {
+interface ContentMetadataOptions {
+  hideOnRoot: boolean
+}
+
+export default ((opts?: Partial<ContentMetadataOptions>) => {
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
+    if (opts?.hideOnRoot && fileData.slug === "index") {
+      return <></>
+    }
+
     const text = fileData.text
     if (text) {
       const segments: string[] = []

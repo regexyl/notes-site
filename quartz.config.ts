@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     defaultDateType: "created",
     theme: {
       typography: {
-        header: "Single Day",
+        header: "DM Serif Display",
         body: "Source Sans Pro",
         code: "IBM Plex Mono",
       },
