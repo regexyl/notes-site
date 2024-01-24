@@ -1,5 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { FileNode } from "./quartz/components/ExplorerNode"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -26,7 +27,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(
+      Component.Explorer({
+        filterFn: (node) => {
+          // TODO: this filter function doesn't work
+          return node.name != "regexyl"
+        },
+      }),
+    ),
   ],
   right: [
     // Component.Graph(),
